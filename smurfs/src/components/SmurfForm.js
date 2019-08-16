@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import { connect } from 'react-redux';
 import { Form, Field, withFormik } from 'formik';
 import * as Yup from 'yup';
@@ -45,7 +44,6 @@ const FormikSmurfForm = withFormik({
     }),
 
     handleSubmit(values, { props }) {
-        console.log(values)
         props.addSmurf(
             {
                 name: values.name,

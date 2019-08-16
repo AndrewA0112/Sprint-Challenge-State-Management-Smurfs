@@ -7,8 +7,6 @@ import './SmurfList.scss'
 
 const SmurfList = (props) => {
 
-    console.log(props)
-
     useEffect(() => {
         props.getSmurfList();
     }, [])
