@@ -1,0 +1,26 @@
+.smurfFormContainer {
+    display: flex;
+    flex-direction: column;
+    // background: red;
+
+    .smurfForm {
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+        margin: 0 auto;
+
+        .smurfFormField {
+            margin: 10px 0;
+            border: 1px solid black;
+
+            &:focus {
+                outline: none;
+                border: 1px solid #00AEEF;
+            }
+        }
+
+        .errorMessage {
+            color: red;
+        }
+    }
+}

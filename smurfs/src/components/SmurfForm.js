@@ -3,26 +3,28 @@ import { connect } from 'react-redux';
 import { Form, Field, withFormik } from 'formik';
 import * as Yup from 'yup';
 import { addSmurf } from '../actions'
+import { Button, Icon } from 'semantic-ui-react'
+import './SmurfForm.scss'
 
 const SmurfForm = ({errors, touched, addSmurf}) => {
     
     return (
-        <div>
+        <div className='smurfFormContainer'>
             <h1>Add Smurf</h1>
-            <Form>
-                <Field type='text' name='name' placeholder='Name' />
+            <Form className='smurfForm'>
+                <Field className='smurfFormField' type='text' name='name' placeholder='Name' />
                 {touched.name && errors.name && (
                     <p className='errorMessage'>{errors.name}</p>
                 )}
-                <Field type='number' name='age' placeholder='Age' />
+                <Field className='smurfFormField' type='number' name='age' placeholder='Age' />
                 {touched.age && errors.age && (
                     <p className='errorMessage'>{errors.age}</p>
                 )}
-                <Field type='number' name='height' placeholder='Height' />
+                <Field className='smurfFormField' type='number' name='height' placeholder='Height' />
                 {touched.height && errors.height && (
                     <p className='errorMessage'>{errors.height}</p>
                 )}
-                <button type='submit'>Add Smurf</button>
+                <Button type='submit'>Add Smurf</Button>
             </Form>
         </div>
     )
@@ -38,9 +40,9 @@ const FormikSmurfForm = withFormik({
     },
 
     validationSchema: Yup.object().shape({
-        name: Yup.string().required('Username is a required field'),
-        age: Yup.string().required('Username is a required field'),
-        height: Yup.string().required('Username is a required field')
+        name: Yup.string().required('Name is a required field'),
+        age: Yup.string().required('Age is a required field'),
+        height: Yup.string().required('Height is a required field')
     }),
 
     handleSubmit(values, { props }) {
