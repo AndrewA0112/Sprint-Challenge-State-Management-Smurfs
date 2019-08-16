@@ -1,4 +1,4 @@
-import { GET_SMURFS_START, GET_SMURFS_SUCCESS } from "../actions";
+import { GET_SMURFS_START, GET_SMURFS_SUCCESS, GET_SMURFS_FAILURE, ADD_SMURF_START, ADD_SMURF_SUCCESS } from "../actions";
 
 const initialState = {
     smurfs: [],
@@ -17,6 +17,28 @@ export const smurfReducer = (state = initialState, action) => {
             }
         case GET_SMURFS_SUCCESS:
             console.log('GET_SMURFS_SUCCESS')
+            return {
+                ...state,
+                isLoading: false,
+                error: '',
+                smurfs: action.payload
+            }
+        case GET_SMURFS_FAILURE:
+            console.log('GET_SMURFS_FAILURE')
+            return {
+                ...state,
+                isLoading: false,
+                error: action.payload
+            }
+        case ADD_SMURF_START:
+            console.log('ADD_SMURF_START')
+            return {
+                ...state,
+                isLoading: true,
+                error: ''
+            }
+        case ADD_SMURF_SUCCESS:
+            console.log('ADD_SMURF_SUCCESS')
             return {
                 ...state,
                 isLoading: false,

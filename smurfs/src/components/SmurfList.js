@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { getSmurfList } from '../actions'
+import Smurf from './Smurf'
+
+import './SmurfList.scss'
 
 const SmurfList = (props) => {
 
@@ -13,9 +16,11 @@ const SmurfList = (props) => {
     return (
         <div>
             <h1>Smurf List</h1>
+            <div className='smurfList'>
             {
-                props.smurfs && props.smurfs.map(smurf => <h1 key={smurf.id}>{smurf.name}</h1>)
+                props.smurfs && props.smurfs.map(smurf => <Smurf key={smurf.id} smurf={smurf}/>)
             }
+            </div>
         </div>
     )
 }
