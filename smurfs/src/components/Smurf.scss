@@ -2,7 +2,29 @@
     width: 30%;
 }
 
+.ui.card.smurfCard {
+    margin: 0 auto;
+}
+
 .smurfModal {
-    width: 10%;
-    background: red;
+    // background: red;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    input {
+        width: 100%;
+    }
+}
+
+.smurfModalButtons {
+    // background: red;
+    margin: 20px 0;
+
+    .smurfModalButton {
+        // background: blue;
+        // background: red;
+        margin: 5px 0;
+        width: 100%;
+    }
 }
